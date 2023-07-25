@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import models
-from database import engine
-from routers import post, user, auth,vote
+from . import models
+from .database import engine
+from .routers import post, user, auth,vote
 
 # create the database tables
-models.Base.metadata.create_all(bind=engine)
+# models.Base.metadata.create_all(bind=engine)
 
 # fastapi is the library and we are importing module.
 app = FastAPI()  # creating an instance of fast API
@@ -23,7 +23,7 @@ app.add_middleware(
 @app.get("/")   # decorator #root path
 async def root():  # async is used for making an API call or talking to the database/ path operation function
     # fast api converts it to json
-    return {"message": "Hello World. I am subham. I love chelsea football club."}
+    return {"message": "Hello World. I am subham Mohanty. I love chelsea football club."}
 
 # adding routers
 app.include_router(post.router)

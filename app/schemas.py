@@ -2,7 +2,7 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 from typing import Optional
-from pydantic import conint
+from pydantic.types import conint
 # handles direction of the user sendinf data to us
 
 
